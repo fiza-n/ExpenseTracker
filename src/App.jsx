@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Category from './components/Category'
+import Categories from './Constants'
 
 
 function App() {
@@ -6,7 +8,12 @@ function App() {
 
   return (
     <>
-
+      {Array.from({ length: 8 }).map((_, i) => {
+        const category = Categories[i % Categories.length]
+        return (
+          <Category />
+        )
+      })}
     </>
   )
 }
