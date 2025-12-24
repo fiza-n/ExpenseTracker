@@ -1,12 +1,11 @@
-import entertainment from './assets';
-import fitnessAndHealth from './assets';
-import food from './assets';
-import groceries from './assets';
-import house from './assets';
-import savings from './assets';
-import shopping from './assets';
-import utilities from '.assets';
-
+import entertainment from '../assets/entertainment.png';
+import fitnessAndHealth from '../assets/fitness-and-health.jpg';
+import food from '../assets/food.png';
+import groceries from '../assets/groceries.jpg';
+import house from '../assets/house.webp';
+import savings from '../assets/savings.png';
+import shopping from '../assets/shopping.jpg';
+import utilities from '../assets/utilities.png';
 
 
 const Categories = [
@@ -52,5 +51,5 @@ export {
     savings,
     shopping,
     utilities,
-    reactLogo,
+   
 };
