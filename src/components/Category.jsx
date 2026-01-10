@@ -1,6 +1,10 @@
+import { useState } from "react"
 
 
-const Category = ({ title, img, description, amount, onClick }) => {
+const Category = ({ title, img, description, onClick }) => {
+  const [amount, setAmount] = useState('$0.00');
+
+
   return (
     <div
       onClick={onClick}

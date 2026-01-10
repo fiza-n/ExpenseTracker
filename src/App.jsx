@@ -21,7 +21,6 @@ function App() {
             title={category.title}
             img={category.img}
             description={category.desc}
-            amount={category.amount}
             placeholder={category.placeholder}
             onClick={() => setSelected(category)}
           />

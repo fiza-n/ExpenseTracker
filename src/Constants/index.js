@@ -13,14 +13,12 @@ const Categories = [
         title: 'Entertainment',
         img: entertainment,
         desc: 'Movies, Music, Games, Events',
-        amount: '$0.00',
         placeholder:'e.g. Movie night tickets'
     },
      {
         title: 'Savings',
         img: savings,
         desc: 'Emergency Fund, Investments, Retirement',
-        amount: '$0.00',
         placeholder:'e.g. Monthly savings deposit'
     },
     
@@ -28,28 +26,24 @@ const Categories = [
         title: 'Food & Drinks',
         img: food,
         desc: 'Restaurants, Cafes, Beverages',
-        amount: '$0.00',
         placeholder:'e.g. Dinner at Italian Bistro'
     },
      {
         title: 'Groceries',
         img: groceries,
         desc: 'Supermarket, Farmers Market, Convenience Store',
-        amount: '$0.00',
         placeholder:'e.g. Weekly grocery shopping'
     },
      {
         title: 'Shopping',
         img: shopping,
         desc: 'Clothes, Electronics, Gifts',
-        amount: '$0.00',
         placeholder:'e.g. New headphones'
     },
      {
         title: 'Utilities',
         img: utilities,
         desc: 'Electricity, Water, Internet, Phone',
-        amount: '$0.00',
         placeholder:'e.g. Monthly internet bill'
     }
 ]
