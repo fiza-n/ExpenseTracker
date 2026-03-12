@@ -39,7 +39,7 @@ const Category = ({ title, img, description, onClick }) => {
         <h4>{title}</h4>
       </div>
       <p>{description}</p>
-      <h3 className='mt-4 text-xl text-white'>Rs{totalSpent}</h3>
+      <h3 className='mt-4 text-xl text-white'>Rs {totalSpent}</h3>
       </div>
     </div>
   )

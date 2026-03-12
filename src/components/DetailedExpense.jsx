@@ -91,11 +91,11 @@ useEffect(() => {
             <div className="flex gap-6 mt-2 text-sm text-gray-300">
               <div>
                 <div className="text-xs text-gray-400">Spent This Month</div>
-                <div className="font-semibold">Rs{spentThisMonth}</div>
+                <div className="font-semibold">Rs {spentThisMonth}</div>
               </div>
               <div>
                 <div className="text-xs text-gray-400">Total Spent</div>
-                <div className="font-semibold">Rs{totalSpent}</div>
+                <div className="font-semibold">Rs {totalSpent}</div>
               </div>
             </div>
           </div>
@@ -125,10 +125,9 @@ useEffect(() => {
           <div>
             <label className="text-sm text-gray-300">Amount</label>
             <div className="flex gap-2 mt-1">
-              <span className="inline-flex items-center px-3 rounded-l bg-gray-800 border border-r-0 border-gray-700">$</span>
+              <span className="inline-flex items-center px-3 rounded-l bg-gray-800 border border-r-0 border-gray-700">Rs</span>
               <input
                 type="number"
-                step="0.01"
                 className="w-full p-2 rounded-r bg-gray-800 text-white border border-gray-700"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
@@ -168,7 +167,7 @@ useEffect(() => {
                     <tr key={e.id} className="border-b border-gray-800">
                       <td className="py-3 px-2 align-top text-sm text-gray-300">{new Date(e.date).toLocaleDateString()}</td>
                       <td className="py-3 px-2 align-top text-sm">{e.name}</td>
-                      <td className="py-3 px-2 align-top text-sm">${Number(e.amount).toFixed(2)}</td>
+                      <td className="py-3 px-2 align-top text-sm"> {Number(e.amount)}</td>
                       <td className="py-3 px-2 align-top text-sm">
                         <button
                           onClick={() => handleDelete(e.id)}
