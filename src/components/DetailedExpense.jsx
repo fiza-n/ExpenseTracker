@@ -1,29 +1,39 @@
 import React, { useEffect, useState } from 'react'
 
 const DetailedExpense = ({ title, img, onClose , placeholder}) => {
-  const [entries, setEntries] = useState([])
+  const [allEntries, setAllEntries] = useState([])
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [amount, setAmount] = useState('')
+const [loaded, setLoaded] = useState(false)
 
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem('detailedExpenses')
-      if (raw) setEntries(JSON.parse(raw))
-    } catch (e) {
-      console.error('Failed loading expenses', e)
-    }
-  }, [])
 
-  useEffect(() => {
-    localStorage.setItem('detailedExpenses', JSON.stringify(entries))
-  }, [entries])
+useEffect(() => {
+  try {
+    const raw = localStorage.getItem('detailedExpenses')
+    if (raw) setAllEntries(JSON.parse(raw))
+  } catch (e) {
+    console.error(e)
+  } finally {
+    setLoaded(true) 
+  }
+}, [])
+
+
+useEffect(() => {
+  if (!loaded) return
+  localStorage.setItem('detailedExpenses', JSON.stringify(allEntries))
+  window.dispatchEvent(new Event('expensesUpdated')) 
+}, [allEntries, loaded])
+ 
+  const entries = allEntries.filter(entry => entry.category === title)
 
   const resetForm = () => {
     setName('')
     setDate('')
     setAmount('')
   }
+  
 
   const handleAdd = (e) => {
     e.preventDefault()
@@ -37,14 +47,16 @@ const DetailedExpense = ({ title, img, onClose , placeholder}) => {
       name: name.trim(),
       date,
       amount: +numeric,
+      category: title
     }
-    setEntries((s) => [item, ...s])
+    setAllEntries((s) => [item, ...s])
     resetForm()
   }
 
   const handleDelete = (id) => {
     if (!confirm('Delete this entry?')) return
-    setEntries((s) => s.filter((it) => it.id !== id))
+    setAllEntries((s) => s.filter((it) => it.id !== id))
+
   }
 
   const totalSpent = entries.reduce((acc, e) => acc + Number(e.amount || 0), 0)

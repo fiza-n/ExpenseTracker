@@ -14,7 +14,7 @@ function App() {
       <Navbar /> 
       <Hero />
 
-     <section className='min-h-screen text-white grid grid-cols-4 gap-4 p-2'>
+     <section className='min-h-screen text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2'>
       {Categories.slice(0, 6).map((category, i) => (
         <div key={`${category.title}-${i}`}>
           <Category

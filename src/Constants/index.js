@@ -8,6 +8,7 @@ import shopping from '../assets/shopping.jpg';
 import utilities from '../assets/utilities.png';
 
 
+
 const Categories = [
     {
         title: 'Entertainment',
