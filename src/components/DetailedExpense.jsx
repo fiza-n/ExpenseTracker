@@ -91,11 +91,11 @@ useEffect(() => {
             <div className="flex gap-6 mt-2 text-sm text-gray-300">
               <div>
                 <div className="text-xs text-gray-400">Spent This Month</div>
-                <div className="font-semibold">${spentThisMonth.toFixed(2)}</div>
+                <div className="font-semibold">Rs{spentThisMonth}</div>
               </div>
               <div>
                 <div className="text-xs text-gray-400">Total Spent</div>
-                <div className="font-semibold">${totalSpent.toFixed(2)}</div>
+                <div className="font-semibold">Rs{totalSpent}</div>
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@ useEffect(() => {
                 className="w-full p-2 rounded-r bg-gray-800 text-white border border-gray-700"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                placeholder="0.00"
+                placeholder="0"
               />
             </div>
           </div>
